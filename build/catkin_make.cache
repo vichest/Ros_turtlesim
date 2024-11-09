@@ -1,2 +1,0 @@
-ros_session
--DCATKIN_DEVEL_PREFIX=/home/sanjit/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sanjit/ros_ws/install -G Unix Makefiles
