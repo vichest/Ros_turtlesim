@@ -4,6 +4,9 @@
 
 This task demonstrates control of a simulated turtle in a rectangular path using ROS (Robot Operating System), testing adaptability to new software stacks and programming fundamentals.
 
+## About
+This ROS package controls the movement of a bot inside the Turtlesim package. It allows the bot to perform various movements, including moving in a straight line, circular path, and now, a custom rectangular path.
+
 ## Requirements
 - **Operating System**: Ubuntu 20.04 LTS
 - **Software**: ROS (Robot Operating System) - ROS-Base version, ROS Turtlesim package
@@ -27,21 +30,59 @@ Objective: Set up ROS on the fresh Ubuntu installation.
    roscore
    ```
 
-### 3. ROS Turtlesim Task
+### 3. Install Turtlesim Package
+Install the Turtlesim package to simulate the turtle’s movement:
+
+```bash
+sudo apt-get install ros-noetic-turtlesim
+```
+
+### 4. Clone and Build the ROS Package
+1. **Set up a Catkin Workspace**:
+   ```bash
+   mkdir -p ~/ros_ws/src
+   cd ~/ros_ws/src
+   ```
+
+2. **Clone the Package**:
+   Clone this repository into your Catkin workspace:
+   ```bash
+   git clone https://github.com/topguns837/ros_session.git
+   ```
+
+3. **Compile the Code**:
+   Navigate to the root of your workspace, compile the package, and source the workspace:
+   ```bash
+   cd ~/ros_ws
+   catkin_make
+   source devel/setup.bash
+   ```
+
+## ROS Turtlesim Task Instructions
+
 Objective: Practice ROS concepts such as Packages, Nodes, Subscribers, Publishers, Messages, and Topics.
 
-#### Steps:
-1. **Install the ROS Turtlesim Package**:
-   - Follow the instructions [here](https://wiki.ros.org/turtlesim) to install Turtlesim.
+### Steps:
+1. **Run ROS Core**:
+   Open a new terminal and start the ROS core with:
+   ```bash
+   roscore
+   ```
 
-2. **Clone the Provided Package**:
-   - Clone the ROS package from the public repository [here](Link to public repository).
+2. **Start Turtlesim Node**:
+   In another terminal, launch the Turtlesim node:
+   ```bash
+   rosrun turtlesim turtlesim_node
+   ```
 
-3. **Run the Turtlesim Package**:
-   - The package includes code to make the turtle move in a straight line and a circular trajectory.
+3. **Run the Movement Code**:
+   In a third terminal, run the code to control the turtle’s movement:
+   ```bash
+   rosrun ros_session move.py
+   ```
 
 4. **Implement the Rectangle Path**:
-   - Modify the code to make the turtle move in a rectangular path.
+   Modify the provided code to make the turtle move in a rectangular path.
    - Choose your own dimensions for the rectangle (length and breadth).
 
 5. **Expected Outcome**:
